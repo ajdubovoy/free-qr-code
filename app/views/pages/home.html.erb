@@ -1,12 +1,22 @@
-<h1>QR code generator</h1>
-
-<%= form_tag :download, method: :get do |f| %>
-  <div class="field">
-    <%= label_tag 'Text or URL' %>
-    <%= text_field_tag :content, nil, required: true %>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Alex's Free n' Simple QR Codes</h1>
+      <p>Get 'em while they're hot 🔥</p>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= submit_tag 'Generate QR code' %>
+  
+  <div class="row">
+    <div class="col-12">
+      <%= simple_form_for :download, method: :get do |f| %>
+        <div class="field">
+          <%= f.input :content, label: "Enter any text or URL 🐹", required: true %>
+        </div>
+      
+        <div class="actions">
+          <%= f.submit 'Generate QR code & Download 🐧',class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
